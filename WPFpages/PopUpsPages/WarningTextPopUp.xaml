@@ -1,0 +1,30 @@
+﻿<Page x:Class="Residence_Web_Scraper.WPFpages.PopUpsPages.WarningTextPopUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Residence_Web_Scraper.WPFpages.PopUpsPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="260" d:DesignWidth="390"
+      Title="WarningTextPopUp">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/Assets/Images/Warning.png"
+                               Width="390"
+                               Height="100"/>
+            <TextBlock Text="Example Text"
+                       TextWrapping="Wrap"
+                       Name="WarningTxt"
+                       Margin="10"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Foreground="{Binding Source={StaticResource RTextBrightBlue}}"
+                       FontSize="20"
+                       Height="140"
+                       FontFamily="Franklin Gothic Medium" 
+                       VerticalAlignment="Top" 
+                       Width="370"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,96 @@
+﻿<Window x:Class="Residence_Web_Scraper.WPFpages.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Residence_Web_Scraper.WPFpages"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="{Binding Source= {StaticResource RDarkerBlue}}"
+        Title="SettingsWindow" Height="220" Width="330">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+                  Background="{Binding Source= {StaticResource RBlue}}"
+                  MouseDown="MoveApplication">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <TextBlock Grid.Column="1"
+                       Text="Settings"
+                       IsHitTestVisible= "false"
+                       FontSize="30"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="0,1,0,0"
+                       Grid.ColumnSpan="3" 
+                       FontFamily="Arial Black">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF14CAF9" Offset="1"/>
+                        <GradientStop Color="#FFD8F7FF"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden"
+                          HorizontalScrollBarVisibility="Disabled" 
+                          Grid.Row="1">
+
+                <StackPanel Margin="10"
+                            Grid.Row="1"
+                            Orientation="Vertical">
+
+                    <Button Background="{Binding Source= {StaticResource RBlue}}"
+                            Margin="5,5,5,0"
+                            Style="{Binding Source={StaticResource RoundedBtn}}"
+                            Template="{Binding Source={StaticResource ImageButton}}" Click="ToggleDownloadMbWarning">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock FontSize="20"
+                                       Grid.Column="0"
+                                       TextAlignment="Center"
+                                       Text="Enable Download Limiter"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                            <Image Width="40"
+                                   Name="EnableDownWarnImage"
+                                   Grid.Column="1"
+                                   Source="pack://application:,,,/Assets/Images/Thumbup.png"
+                                   Height="40"/>
+                        </Grid>
+                    </Button>
+                    
+                    <Border CornerRadius="8"
+                            Width="250"
+                            Background="{Binding Source={StaticResource RBlue}}">
+                        <TextBlock FontSize="15"
+                                   Grid.Column="0"
+                                   Margin="3"
+                                   Text="Shows a popup that limits the internet trafic to avoid using more Mb then its available in the vpn. Disable if you have an unlimited data vpn"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"
+                                   Foreground="{Binding Source={StaticResource RTextBrightBlue}}"
+                                   FontFamily="Franklin Gothic Medium" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    </Border>
+                    
+                    
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
