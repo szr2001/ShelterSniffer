@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using PuppeteerSharp;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -8,7 +9,17 @@ using System.Threading.Tasks;
 
 namespace Residence_Web_Scraper.HandlerClasses
 {
-    public static class DataBaseHandler // add Backup and LoadBackup
+    // add Backup and LoadBackup
+    // add parameters instead of directly using the user input to avoid sql injection attack
+    
+    //BadExample
+    //"string sql = "SELECT * FROM Table WHERE Date = {date}";
+    //var res = await connection.QueryAsync<Residence>(sql);
+
+    //CorrectExample
+    //"string sql = "SELECT * FROM Table WHERE Date = {@Date}";
+    //var res = await connection.QueryAsync<Residence>(sql,new{Date = date});
+    public static class DataBaseHandler
     {
         //semaphore to ensure only one method can write to the database at once
         private static SemaphoreSlim _semaphore = new(1);
