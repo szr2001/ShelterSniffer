@@ -6,6 +6,7 @@
     <RootNamespace>Residence_Web_Scraper</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>ShelterSnifferLogo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -96,6 +97,7 @@
     <Content Include="ResidencesDatabase.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ShelterSnifferLogo.ico" />
   </ItemGroup>
 
   <ItemGroup>
