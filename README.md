@@ -6,6 +6,4 @@ It has multithreading,basic and advange filtering based on the information in th
 You are responsable on how you use this app and remember you need to recive permision from any website you wish to target.
 This is more for learning, be responsable with it.
 
-This work is licensed under a
-Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 ![alt text](Assets/Thumb.png)
